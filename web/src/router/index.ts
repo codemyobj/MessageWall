@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'index',
-    component: () => import('@/views/YikeIndex.vue'),
+    component: () => import('@/views/YileIndex.vue'),
   },
 ]
 

@@ -21,6 +21,7 @@
     "less": "^4.4.2",
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
+    "vite-plugin-style-import": "^2.0.0",
     "vue-tsc": "^3.1.4"
   }
 }

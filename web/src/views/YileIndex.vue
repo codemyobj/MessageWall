@@ -10,10 +10,10 @@ const aa = ref(0)
 const count = computed(() => mainPinia.count)
 
 onMounted(() => {
-  axios.post('/api/sigin/match', {
-    data: 'aaa',
-    pwd: 'bbb',
-  })
+  // axios.post('/api/sigin/match', {
+  //   data: 'aaa',
+  //   pwd: 'bbb',
+  // })
 })
 </script>
 <template>
@@ -25,7 +25,7 @@ onMounted(() => {
 <style scoped lang="less">
 div {
   p {
-    color: red;
+    color: @warning-color; 
   }
 }
 </style>
