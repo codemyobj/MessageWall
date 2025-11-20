@@ -1,10 +1,21 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHashHistory,
+  type RouteRecordRaw,
+} from 'vue-router'
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
+    redirect: '/wall',
     name: 'index',
     component: () => import('@/views/YileIndex.vue'),
+    children: [
+      {
+        path: '/wall',
+        component: () => import('@/views/WallMessage.vue'),
+      },
+    ],
   },
 ]
 

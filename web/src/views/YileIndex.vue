@@ -1,31 +1,27 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import useMainPinia from '../store'
-import axios from 'axios'
-
-const mainPinia = useMainPinia()
-
-const aa = ref(0)
-
-const count = computed(() => mainPinia.count)
-
-onMounted(() => {
-  // axios.post('/api/sigin/match', {
-  //   data: 'aaa',
-  //   pwd: 'bbb',
-  // })
-})
+import TopBar from '@/components/TopBar.vue'
 </script>
 <template>
-  <div>
-    <p>{{ count }}</p>
+  <div class="wall-index">
+    <top-bar />
+    <video
+      src="@/assets/images/qm1.mp4"
+      autoplay
+      muted
+      loop
+      class="bg-video"
+    ></video>
+    <router-view></router-view>
   </div>
-  <button @click="mainPinia.increment">++</button>
 </template>
 <style scoped lang="less">
-div {
-  p {
-    color: @warning-color;
+.wall-index {
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 800px;
   }
 }
 </style>
