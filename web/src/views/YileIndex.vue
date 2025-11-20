@@ -25,7 +25,7 @@ onMounted(() => {
 <style scoped lang="less">
 div {
   p {
-    color: @warning-color; 
+    color: @warning-color;
   }
 }
 </style>
