@@ -36,4 +36,12 @@ pnpm create vite
 - | |-- store/ # 状态管理
 - | |-- styles/ # 样式
 - | |-- utils/ # 工具函数
+- | |-- views/ # 页面
 - |-- static/
+
+## 项目插件安装
+
+- pinia
+- vue-router
+- axios
+- less
