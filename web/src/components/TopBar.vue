@@ -1,5 +1,15 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+const router = useRouter()
 import YlButton from './YlButton.vue'
+import { computed } from 'vue'
+
+const currentPage = computed(() => router.currentRoute.value.path)
+
+const changePage = (path: string) => {
+  // router.push(path)
+  console.log(currentPage.value)
+}
 </script>
 <template>
   <div class="top-bar">
@@ -8,8 +18,18 @@ import YlButton from './YlButton.vue'
       <p class="logo-name">一刻时光</p>
     </div>
     <div class="menu">
-      <yl-button nom="cprimary" class="menu-message-wall">留言墙</yl-button>
-      <yl-button nom="csecondary" class="menu-photo-wall">照片墙</yl-button>
+      <yl-button
+        nom="cprimary"
+        class="menu-message-wall"
+        @click="changePage('/wall-msg')"
+        >留言墙</yl-button
+      >
+      <yl-button
+        nom="csecondary"
+        class="menu-photo-wall"
+        @click="changePage('/wall-pic')"
+        >照片墙</yl-button
+      >
     </div>
     <div class="user">
       <div class="user-head"></div>

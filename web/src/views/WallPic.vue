@@ -1,3 +1,3 @@
 <script setup lang="ts"></script>
-<template>123</template>
+<template>WallPic</template>
 <style scoped></style>

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 const props = withDefaults(
   defineProps<{
     size: string
@@ -17,6 +20,7 @@ const props = withDefaults(
 </template>
 <style scoped lang="less">
 .yl-button {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
