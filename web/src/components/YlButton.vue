@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-const props = withDefaults(
+withDefaults(
   defineProps<{
-    size: string
-    nom: string
+    size?: string
+    nom?: string
   }>(),
   {
     size: 'base',

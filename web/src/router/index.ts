@@ -7,17 +7,13 @@ import {
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/wall-msg',
+    redirect: '/wall?id=0',
     name: 'index',
     component: () => import('@/views/YileIndex.vue'),
     children: [
       {
-        path: '/wall-msg',
+        path: '/wall',
         component: () => import('@/views/WallMsg.vue'),
-      },
-      {
-        path: '/wall-pic',
-        component: () => import('@/views/WallPic.vue'),
       },
     ],
   },

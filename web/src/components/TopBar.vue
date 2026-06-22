@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
+const route = useRoute()
 import YlButton from './YlButton.vue'
 import { computed } from 'vue'
 
-const currentPage = computed(() => router.currentRoute.value.path)
-
-const changePage = (path: string) => {
-  // router.push(path)
-  console.log(currentPage.value)
-}
+const id = computed(() => route.query.id)
 </script>
 <template>
   <div class="top-bar">
@@ -19,15 +15,17 @@ const changePage = (path: string) => {
     </div>
     <div class="menu">
       <yl-button
-        nom="cprimary"
+        size="base"
+        :nom="id === '0' ? 'cprimary' : 'csecondary'"
         class="menu-message-wall"
-        @click="changePage('/wall-msg')"
+        @click="router.push({ query: { id: '0' } })"
         >留言墙</yl-button
       >
       <yl-button
-        nom="csecondary"
+        size="base"
+        :nom="id === '1' ? 'cprimary' : 'csecondary'"
         class="menu-photo-wall"
-        @click="changePage('/wall-pic')"
+        @click="router.push({ query: { id: '1' } })"
         >照片墙</yl-button
       >
     </div>
@@ -38,11 +36,12 @@ const changePage = (path: string) => {
 </template>
 <style scoped lang="less">
 .top-bar {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 52px;
-  background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 4px 0 #0000001a;
   padding: 0 30px;
   .logo {

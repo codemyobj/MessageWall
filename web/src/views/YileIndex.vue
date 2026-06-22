@@ -1,27 +1,24 @@
 <script setup lang="ts">
 import TopBar from '@/components/TopBar.vue'
+import FooterBar from '@/components/FooterBar.vue'
 </script>
 <template>
-  <div class="wall-index">
-    <top-bar />
-    <video
-      src="@/assets/images/qm1.mp4"
-      autoplay
-      muted
-      loop
-      class="bg-video"
-    ></video>
+  <top-bar />
+  <video
+    src="@/assets/images/qm1.mp4"
+    autoplay
+    muted
+    loop
+    class="fixed top-0 left-0 z-[-1] h-[800px]"
+  />
+  <div class="container overflow-scroll  overflow-x-hidden">
     <router-view></router-view>
+    <footer-bar />
   </div>
 </template>
-<style scoped lang="less">
-.wall-index {
-  .bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    height: 800px;
-  }
+
+<style lang="less" scoped>
+.container {
+  height: calc(100vh - 52px);
 }
 </style>
