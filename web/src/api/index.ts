@@ -1,12 +1,5 @@
-import axios from 'axios'
+import request from '@/utils/request'
+import type { InsertWallRequest } from './types'
 
-const apiClient = axios.create({
-  baseURL: 'https://api.example.com',
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
-
-
-export default apiClient
+export const insertwall = (data: InsertWallRequest): Record<string, any> =>
+  request.post('/insertwall', data)

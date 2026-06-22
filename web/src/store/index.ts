@@ -1,16 +1,18 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import { note } from '../../mock/index.ts'
+import type { Card } from '@/types'
 
 const useMainPinia = defineStore('main', () => {
-  const count = ref(0)
+  const cardList = ref<Card[]>([])
 
-  function increment() {
-    count.value++
+  function getCardList() {
+    cardList.value = note.data
   }
 
   return {
-    count,
-    increment,
+    cardList,
+    getCardList,
   }
 })
 
